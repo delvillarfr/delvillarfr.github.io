@@ -1,15 +1,237 @@
-body {
-    background-color: rgb(215, 255, 213);
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 540px;
-    margin: auto;
+/* Basic reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.css-flame-text {
-    background-image: linear-gradient(0deg, #f00 25%, #ffb300 60%);
-    color: #0000;
-    -webkit-background-clip: text;
-    background-clip: text;
-    font-weight: bold;
-    display: inline-block;
+/* Default body */
+    body {
+        background-color: rgb(228, 237, 235);
+        color: rgb(40,40,40);
+    }
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: rgb(228, 237, 235);
+            color: rgb(40,40,40);
+        }
+    }
+
+/* Basic classes */
+    .flexdiv {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+    }
+    .center {
+        align-items: center;
+        text-align: center;
+    }
+    .start-center {
+        align-items: start;
+        text-align: center;
+    }
+    .end-center {
+        align-items: end;
+        text-align: center;
+    }
+
+/* Paragraphs */
+    p {
+        margin-bottom: 1rem; /* between paragraphs */
+    }
+
+/* Introduction */
+    .intro {
+        display: flex;
+        justify-content: center;
+        min-height: 45vh;
+        padding: 15px;
+        gap: clamp(15px, 5vw, 200px);
+    }
+    .intro-text {
+        display: flex;
+        width: 363px;
+        text-align: start;
+        align-items: center;
+    }
+    .intro-image {
+        display: flex;
+        align-items: center;
+        width: 363px;
+    }
+    .intro-image img {
+        width: 363px;
+        position: absolute;
+    }
+    @media only screen and (max-width: 985px) {
+        .intro-text {
+            width: 338px;
+        }
+        .intro-image {
+            width: 338px;
+        }
+        .intro-image img {
+            width: 338px;
+        }
+    }
+    @media only screen and (max-width: 750px) {
+        .intro-text {
+            width: 195px;
+        }
+        .intro-image {
+            width: 280px;
+        }
+        .intro-image img {
+            width: 280px;
+        }
+    }
+    @media only screen and (max-width: 550px) {
+        .intro-text {
+            width: 195px;
+        }
+        .intro-image {
+            width: 150px;
+        }
+        .intro-image img {
+            width: 150px;
+        }
+    }
+
+
+.section-title {
+    min-height: 10vh;
 }
+
+/* Papers */
+    .paper-div {
+            display: flex;
+            margin: 15px 40vh;
+            border-bottom: 2px dotted;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+    }
+    .paper-title {
+        text-align: start;
+        color: rgb(40,40,40);
+        background-color: rgb(228, 237, 235);
+        border-style: none;
+        cursor: pointer;
+    }
+    .paper-title:hover {
+        cursor: pointer;
+    }
+    .paper-content {
+      display: none;
+      padding: 1rem 2rem 0;
+    }
+    @media only screen and (max-width: 1360px) {
+        .paper-div { margin: 15px 30vh; }
+    }
+    @media only screen and (max-width: 1200px) {
+        .paper-div { margin: 15px 20vh; }
+    }
+    @media only screen and (max-width: 1020px) {
+        .paper-div { margin: 15px 10vh; }
+    }
+    @media only screen and (max-width: 790px) {
+        .paper-div { margin: 15px 5vh; }
+    }
+    @media only screen and (max-width: 650px) {
+        .paper-div { margin: 15px 3vh; }
+        .paper-content { padding: 1rem 0.5rem 0; }
+    }
+
+/* VW pics */
+.picture-template {
+    display: grid;
+    grid-template-columns: auto 320px auto;
+    padding-top: 1em;
+    padding-bottom: 5em;
+}
+.picture-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    justify-items: center;
+}
+.picture-grid img {
+    height: 150px;
+    width: auto;
+    object-fit: cover;
+}
+@media only screen and (min-width: 375px) {
+    .picture-template {
+        grid-template-columns: auto 375px auto;
+    }
+    .picture-grid img {
+      height: 175px;
+    }
+}
+@media only screen and (min-width: 455px) {
+    .picture-template {
+        grid-template-columns: auto 455px auto;
+    }
+    .picture-grid img {
+      height: 212px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .picture-template {
+        grid-template-columns: auto 768px auto;
+    }
+    .picture-grid {
+        grid-template-columns: 3fr 1fr 2fr 2fr 1fr 3fr; 
+    }
+    .picture-grid img {
+      height: 175px;
+    }
+    .pic-el {
+        grid-column: 1/3;
+    }
+    .pic-em {
+        grid-column: 3/5;
+    }
+    .pic-er {
+        grid-column: 5/7;
+    }
+    .pic-fw {
+        grid-column: 1/7;
+    }
+}
+@media only screen and (min-width: 1086px) {
+    .picture-grid img {
+      height: 212px;
+    }
+    .picture-template {
+        grid-template-columns: auto 930px auto;
+    }
+}
+
+
+/* Fonts */
+    @font-face {
+        font-family: 'Atkinson Hyperlegible Regular';
+        src: url('./fonts/Atkinson-Hyperlegible-Regular-102.otf') format('truetype');
+    }
+    .atkinson {
+        font-family: "Atkinson Hyperlegible Regular";
+        font-weight: 599; /* Light version */
+    }
+    .h3-specs { font-size: 1.8rem; }
+    .text-specs { font-size: 1.3rem; }
+    .abstract-specs { font-size: 1rem; }
+    @media only screen and (max-width: 985px) {
+        .h3-specs { font-size: 1.5rem; }
+        .text-specs { font-size: 1.2rem; }
+    }
+    @media only screen and (max-width: 750px) {
+        .h3-specs { font-size: 1.3rem; }
+        .text-specs { font-size: 1.1rem; }
+    }
+    @media only screen and (max-width: 550px) {
+        .h3-specs { font-size: 1rem; }
+        .text-specs { font-size: 1rem; }
+        .abstract-specs { font-size: 0.8rem; }
+    }
