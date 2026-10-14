@@ -4,7 +4,7 @@
         color: #333;
         margin: 0;
         padding: 50px;
-        font: 14px/1.5 Helvetica, Arial, sans-serif;
+        font: 16px/1.5 Helvetica, Arial, sans-serif;
         font-weight: 400;
     }
     img { max-width: 100%; }
@@ -13,7 +13,7 @@
         line-height: 1.1;
     }
     h1 { color: #222; font-size: 28px; }
-    h3 { color: #333; }
+    h3 { color: #333; font-size: 20px; }
     p { margin: 0 0 20px; }
     .nowrap { white-space: nowrap; }
 
