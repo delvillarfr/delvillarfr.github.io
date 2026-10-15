@@ -47,18 +47,34 @@
     .paper { margin: 0 0 20px; }
     .paper-title {
         display: block;
-        padding: 0;
+        position: relative;
+        padding: 0 0 0 20px;
         border: none;
         background: none;
         font: inherit;
-        color: #267CB9;
+        color: #222;
         text-align: start;
         cursor: pointer;
     }
-    .paper-title:hover { text-decoration: underline; }
+    .paper-title:hover {
+        text-decoration: underline dotted;
+        text-underline-offset: 3px;
+    }
+    /* Arrow: points right when closed, down when open */
+    .paper-title::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 0.45em;
+        border-style: solid;
+        border-width: 5px 0 5px 7px;
+        border-color: transparent transparent transparent currentColor;
+        transition: transform 0.15s;
+    }
+    .paper-title[aria-expanded="true"]::before { transform: rotate(90deg); }
     .paper-content {
         display: none;
-        padding-top: 5px;
+        padding: 5px 0 0 20px;
         color: #555;
     }
     .paper-content p { margin: 5px 0 0; }
